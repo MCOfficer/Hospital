@@ -205,7 +205,7 @@ public class SurgeryUtility
 		        }
 		        materialCost +=
 			        selectedRecipe.ingredients
-				        .Find(count => count.filter != null && count.filter.categories.Contains("Medicine")).count *
+				        .Find(count => count.filter != null && count.filter.categories != null && count.filter.categories.Contains("Medicine")).count *
 			        ((int)pawn.playerSettings.medCare * 15.0f);
 	        }
 	        patientData.Bill = Mathf.Clamp(timeCost,0,100) + Mathf.Clamp(materialCost,0, 3000);
